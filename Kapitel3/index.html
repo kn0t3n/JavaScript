@@ -1,12 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <!-- CSS -->
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .lightblue {
+            background-color: lightblue;
+            
+        }
+
+        #mittwoch {
+            background-color: yellow;
+        }
+    </style>
 </head>
-<body>
+
+<body id="body">
+    <h1>Hallo I3A!</h1>
+    <p class="lightblue" id="text">Lorem
+        <strong>ipsum</strong> dolor sit amet consectetur adipisicing elit. Eius perspiciatis nam doloribus culpa officiis aliquam
+        minus nisi rerum, quibusdam quaerat minima expedita doloremque iusto, asperiores magni repudiandae nemo suscipit
+        tempore?
+    </p>
+    <ul clas="lightblue">
+        <li>Apfel</li>
+        <li>Birne</li>
+        <li>Weintraube</li>
+    </ul>
+
+    <table>
+        <tr>
+            <th>Montag</th>
+            <th>Dienstag</th>
+            <th id="mittwoch">Mittwoch</th>
+            <th>Donnerstag</th>
+            <th>Freitag</th>
+        </tr>
+        <tr>
+            <td>KN</td>
+            <td>M</td>
+            <td>Prog</td>
+            <td>AME</td>
+            <td>IAT</td>
+        </tr>
+        <tr>
+            <td>KN</td>
+            <td>IT-S</td>
+            <td>Prog</td>
+            <td>AME</td>
+            <td>IAT</td>
+        </tr>
+        <tr>
+            <td>KN</td>
+            <td>IT-S</td>
+            <td>Prog</td>
+            <td>AME</td>
+            <td>IAT</td>
+        </tr>
+    </table>
+    <p>Hallo Welt
+    </p>
+
     
+    <button id="btnRot">Rot</button>
+    
+    <input type="button" value="Gelb" id="btnGelb">
+    
+    <button id="btnZufall">Zufall</button>
+    
+    <p id = "zaehler">Es wurde 0 mal geklickt</p>
+
+    <input type="text" name = "" id = "eintrag">
+    <button id = "textfeld">Textfeld</button>
+
+    <ul id = "liste"></ul>
+
+    <script>
+        console.log("Hallo Welt");
+        (function ausgabe() {
+            console.log("Hallo Funktion");
+        })(); // IIFE: Immediatly-invoked function expression
+        console.log(document.getElementById("text"));
+        let p = document.getElementById("text");
+        p.style.backgroundColor = "RED";
+
+        let btnRot = document.getElementById("btnRot");
+        btnRot.addEventListener("click", function () {
+            document.getElementById("body").style.backgroundColor = "RED";
+            zaehler();
+        });
+
+        function hintergrundGelb() {
+            document.getElementById("body").style.backgroundColor = "YELLOW";
+            zaehler();
+        };
+        let btnGelb = document.getElementById("btnGelb");
+        btnGelb.addEventListener("click", hintergrundGelb);
+
+        let btnZufall = document.getElementById("btnZufall");
+        btnZufall.addEventListener("click", zufallsFarbe);
+
+        function zufallsFarbe() {
+           let e = document.getElementById("body").style.backgroundColor = "rgb("+zufall()+ ", "+zufall()+", "+zufall()+")";
+           zaehler();
+           console.log(e);
+        }
+
+        function zufall(){                    
+        return Math.round(Math.random ()*256);
+        };
+
+        let counter = 0;         
+        function zaehler(){ 
+            counter++;    
+            document.getElementById("zaehler").innerText = "Es wurde "+counter+" mal geklickt";       
+        }
+
+        let btnText = document.getElementById("textfeld");
+        
+        btnText.addEventListener("click", function(){
+            eintragen(document.getElementById("eintrag").value);
+        })
+
+        function eintragen(text){
+            console.log(text);
+            let liste = document.getElementById("liste");
+            let eintrag = document.createElement('li');
+            eintrag.innerHTML = text;
+            liste.appendChild(eintrag);
+        }
+
+
+    </script>
+
 </body>
+
 </html>
