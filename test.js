@@ -117,4 +117,18 @@ function divide(a, b) {
         return divide(a - b, b) + 1;
     }
 }
-console.log(divide(2,2));
+console.log(divide(2, 2));
+
+function letTest() {
+    let x = 42;
+    var y = 12;
+    if (true) {
+        let x = 32;
+        console.log(x);
+        var y = 2;
+        console.log(y);
+    }
+    console.log(x);
+    console.log(y);
+}
+letTest();
