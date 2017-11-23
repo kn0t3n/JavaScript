@@ -150,3 +150,27 @@ function potenzRekursiv(zahl) {
     }
 }
 console.log(potenzRekursiv(4));
+
+let testzahl = 2.932323;
+testzahl = Math.round(testzahl);
+console.log(testzahl);
+
+
+var objectTest = {
+    test : 0, 
+    hallo : 'hallo'
+}
+console.log(objectTest);
+console.log(objectTest.test);
+
+var arrTest = [0, 'blubb', 2, null, undefined, 0, false, -0, true, NaN, ''];
+console.log(arrTest);
+if (0 == false && '' == false){
+    console.log('true');
+}
+if (null == undefined){
+    console.log('true');
+}
+if (!(NaN == NaN) && !(NaN == 'bla')){
+    console.log('true');
+}
