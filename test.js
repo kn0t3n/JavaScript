@@ -132,3 +132,21 @@ function letTest() {
     console.log(y);
 }
 letTest();
+
+function potenzIterativ(zahl) {
+    var result = 1;
+    for (let index = 0; index < zahl; index++) {
+        result *= 2
+    }
+    return result;
+}
+console.log(potenzIterativ(4));
+
+function potenzRekursiv(zahl) {
+    if (zahl === 0) {
+        return 1
+    } else {
+        return 2 * potenzRekursiv(zahl - 1);
+    }
+}
+console.log(potenzRekursiv(4));

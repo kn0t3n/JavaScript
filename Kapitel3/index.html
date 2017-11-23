@@ -18,7 +18,7 @@
 
         .lightblue {
             background-color: lightblue;
-            
+
         }
 
         #mittwoch {
@@ -73,19 +73,19 @@
     <p>Hallo Welt
     </p>
 
-    
+
     <button id="btnRot">Rot</button>
-    
+
     <input type="button" value="Gelb" id="btnGelb">
-    
+
     <button id="btnZufall">Zufall</button>
-    
-    <p id = "zaehler">Es wurde 0 mal geklickt</p>
 
-    <input type="text" name = "" id = "eintrag">
-    <button id = "textfeld">Textfeld</button>
+    <p id="zaehler">Es wurde 0 mal geklickt</p>
 
-    <ul id = "liste"></ul>
+    <input type="text" name="" id="eintrag">
+    <button id="textfeld">Textfeld</button>
+
+    <ul id="liste"></ul>
 
     <script>
         console.log("Hallo Welt");
@@ -113,28 +113,28 @@
         btnZufall.addEventListener("click", zufallsFarbe);
 
         function zufallsFarbe() {
-           let e = document.getElementById("body").style.backgroundColor = "rgb("+zufall()+ ", "+zufall()+", "+zufall()+")";
-           zaehler();
-           console.log(e);
+            let e = document.getElementById("body").style.backgroundColor = "rgb(" + zufall() + ", " + zufall() + ", " + zufall() + ")";
+            zaehler();
+            console.log(e);
         }
 
-        function zufall(){                    
-        return Math.round(Math.random ()*256);
+        function zufall() {
+            return Math.round(Math.random() * 256);
         };
 
-        let counter = 0;         
-        function zaehler(){ 
-            counter++;    
-            document.getElementById("zaehler").innerText = "Es wurde "+counter+" mal geklickt";       
+        let counter = 0;
+        function zaehler() {
+            counter++;
+            document.getElementById("zaehler").innerText = "Es wurde " + counter + " mal geklickt";
         }
 
         let btnText = document.getElementById("textfeld");
-        
-        btnText.addEventListener("click", function(){
+
+        btnText.addEventListener("click", function () {
             eintragen(document.getElementById("eintrag").value);
         })
 
-        function eintragen(text){
+        function eintragen(text) {
             console.log(text);
             let liste = document.getElementById("liste");
             let eintrag = document.createElement('li');
