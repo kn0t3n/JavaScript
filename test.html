@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body id="body">
+
+    <header>
+        <h1>Hallo I3A!</h1>
+    </header>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <table>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <button id="gelb">Gelb</button>
+    <button id="rot">Rot</button>
+    <button id="zufall">Zufall</button>
+    <p id="zaehler">Es wurde 0 mal geklickt!</p>
+    <ul id="list"></ul>
+    <input type="text" id="eingabe">
+    <button id="eintragen">Eintragen</button>
+    <ul id="liste"></ul>
+
+    <script>
+
+        var btnGelb = document.getElementById('gelb');
+        btnGelb.addEventListener('click', function () {
+            document.getElementById('body').style.backgroundColor = 'YELLOW';
+            click();
+        })
+        var btnRot = document.getElementById('rot');
+        btnRot.addEventListener('click', function () {
+            document.getElementById('body').style.backgroundColor = 'RED';
+            click();
+        })
+
+        function zufall() {
+            return Math.round(Math.random() * 256);
+        }
+        var btnZufall = document.getElementById('zufall');
+        btnZufall.addEventListener('click', function () {
+            var e = document.getElementById('body').style.backgroundColor = 'rgb(' + zufall() + ',' + zufall() + ',' + zufall() + ')';
+            console.log(e);
+            click();
+        })
+
+        let clicks = 0;
+        function click() {
+            clicks++;
+            document.getElementById('zaehler').innerText = 'Es wurde ' + clicks + ' mal geklickt';
+        }
+
+        var btnEintragen = document.getElementById('eintragen');
+        btnEintragen.addEventListener('click', function(){
+            var eingabe = document.getElementById('eingabe').value;
+            var liste = document.getElementById('liste');
+            var listenEintrag = document.createElement('li');
+            listenEintrag.innerHTML = eingabe;
+            liste.appendChild(listenEintrag);
+        })
+
+
+    </script>
+
+</body>
+
+</html>
