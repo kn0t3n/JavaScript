@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #eintragen {
+            margin-left: 4px;
+
+        }
+
+        button {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Schweiger</h1>
+    <p>Notiz:
+        <input type="text" id="notiz"> Kategorie:
+        <input type="text" id="kategorie">
+        <button id="eintragen">Eintragen</button>
+    </p>
+    <table id="table">
+       
+    </table>
+
+
+    <script>       
+
+        var btnEintragen = document.getElementById('eintragen');
+        
+        btnEintragen.addEventListener('click', function () {
+            var notiz = document.getElementById('notiz').value;
+            var kategorie = document.getElementById('kategorie').value;
+            var table = document.getElementById('table');
+            var tabellenEintragTr1 = document.createElement('tr');
+            var tabellenEintrag1 = document.createElement('td');            
+            var tabellenEintrag2 = document.createElement('td');
+            console.log(notiz);
+            console.log(kategorie);
+            if (notiz != "" && kategorie != "") {
+                tabellenEintrag1.innerHTML = notiz;
+                //table.appendChild(tabellenEintragTr1);
+                tabellenEintragTr1.appendChild(tabellenEintrag1);
+                tabellenEintrag2.innerHTML = kategorie;
+                tabellenEintragTr1.appendChild(tabellenEintrag2);
+                table.insertBefore(tabellenEintragTr1, table.childNodes[0]); 
+                resetInput();                             
+            }            
+        })
+        
+        function resetInput(){
+            var notiz1 = document.getElementById('notiz');
+            var kategorie1 = document.getElementById('kategorie');
+            notiz1.value = "";
+            kategorie1.value = "";
+        }
+    </script>
+</body>
+
+</html>
